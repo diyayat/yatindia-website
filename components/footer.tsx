@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Twitter, Linkedin, Mail } from "lucide-react"
+import { Youtube, Linkedin, Instagram, Mail } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -17,28 +17,34 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.youtube.com/@YAT-INDIA/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg border flex items-center justify-center hover:bg-muted transition-colors"
-                aria-label="Twitter"
+                aria-label="YouTube"
               >
-                <Twitter className="w-5 h-5" />
+                <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/yatindia/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg border flex items-center justify-center hover:bg-muted transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/yat_india/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg border flex items-center justify-center hover:bg-muted transition-colors"
-                aria-label="GitHub"
+                aria-label="Instagram"
               >
-                <Github className="w-5 h-5" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="mailto:hosting.yatindia@gmail.com"
                 className="w-10 h-10 rounded-lg border flex items-center justify-center hover:bg-muted transition-colors"
                 aria-label="Email"
               >
@@ -51,23 +57,43 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#services" className="hover:text-foreground transition-colors">
-                  Web Development
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  Website Development
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-foreground transition-colors">
-                  Mobile Development
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  Ecommerce Apps
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-foreground transition-colors">
-                  UI/UX Design
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  Mobile Apps
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-foreground transition-colors">
-                  Cloud Solutions
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  Custom Software
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  AR/VR Solutions
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  Digital Marketing
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  Animation Videos
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-foreground transition-colors">
+                  AI Applications
                 </Link>
               </li>
             </ul>
@@ -77,23 +103,28 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#about" className="hover:text-foreground transition-colors">
+                <Link href="/about" className="hover:text-foreground transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#features" className="hover:text-foreground transition-colors">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link href="/careers" className="hover:text-foreground transition-colors">
                   Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-foreground transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries" className="hover:text-foreground transition-colors">
+                  Industries
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-foreground transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -102,8 +133,8 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>hello@yatindia.com</li>
-              <li>+91 123 456 7890</li>
+              <li>hosting.yatindia@gmail.com</li>
+              <li>+91 8428343404</li>
               <li>India</li>
             </ul>
           </div>
