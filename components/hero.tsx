@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -49,14 +50,15 @@ const Hero = () => {
               Start Your Project
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-lg px-8 border-2 hover:bg-muted"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View Our Work
-            </Button>
+            <Link href="/work">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 border-2 hover:bg-muted hover:text-primary"
+              >
+                View Our Work
+              </Button>
+            </Link>
           </div>
 
           {/* Stats */}
@@ -75,7 +77,7 @@ const Hero = () => {
             </div>
             <div className="space-y-1">
               <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-primary bg-clip-text text-transparent">
-                5+
+                6+
               </div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </div>

@@ -1,41 +1,25 @@
-"use client"
-
-import { Header } from "@/components/header"
-import Hero from "@/components/hero"
-import { Features } from "@/components/sections/features"
-import { Services } from "@/components/sections/services"
-import { Technologies } from "@/components/sections/technologies"
-import { About } from "@/components/sections/about"
-import { Testimonials } from "@/components/sections/testimonials"
-import { CTA } from "@/components/sections/cta"
-import { Footer } from "@/components/footer"
-import { useEffect } from "react"
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import Hero from "@/components/hero";
+import { Services } from "@/components/sections/services";
+import { Features } from "@/components/sections/features";
+import { About } from "@/components/sections/about";
+import { Technologies } from "@/components/sections/technologies";
+import { Testimonials } from "@/components/sections/testimonials";
+import { CTA } from "@/components/sections/cta";
 
 export default function Home() {
-  useEffect(() => {
-    // Handle hash scrolling after page loads
-    const hash = window.location.hash
-    if (hash) {
-      const element = document.getElementById(hash.substring(1))
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' })
-        }, 100)
-      }
-    }
-  }, [])
-
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Features />
       <Services />
-      <Technologies />
+      <Features />
       <About />
+      <Technologies />
       <Testimonials />
       <CTA />
       <Footer />
     </main>
-  )
+  );
 }

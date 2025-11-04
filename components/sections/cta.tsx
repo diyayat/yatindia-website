@@ -34,9 +34,9 @@ export function CTA() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-lg px-8 border-2 hover:bg-muted"
+              className="text-lg px-8 border-2 hover:bg-muted hover:text-primary"
             >
-              <Mail className="mr-2 w-5 h-5" />
+              <Mail className="mr-2 w-5 h-5 hover:text-primary" />
               Contact Us
             </Button>
           </div>

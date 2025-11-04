@@ -210,6 +210,13 @@ export function Header() {
           </div>
 
           <button
+            onClick={() => scrollToSection('testimonials')}
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            Testimonials
+          </button>
+
+          <button
             onClick={() => scrollToSection('contact')}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
@@ -309,6 +316,13 @@ export function Header() {
               Blog
             </Link>
 
+            <button
+              onClick={() => scrollToSection('testimonials')}
+              className="text-left text-sm font-medium transition-colors hover:text-primary"
+            >
+              Testimonials
+            </button>
+
             {/* Industries Dropdown Mobile */}
             <div className="flex flex-col gap-2">
               <button 
@@ -358,6 +372,13 @@ export function Header() {
                 </div>
               )}
             </div>
+
+            <button
+              onClick={() => scrollToSection('testimonials')}
+              className="text-left text-sm font-medium transition-colors hover:text-primary"
+            >
+              Testimonials
+            </button>
 
             <button
               onClick={() => scrollToSection('contact')}

@@ -229,7 +229,7 @@ export default function ServicesPage() {
               Let's discuss how we can help transform your business with our services.
             </p>
             <Link href="/careers">
-              <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
+              <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow ">
                 Contact Us
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>

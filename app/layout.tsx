@@ -98,6 +98,11 @@ export const metadata: Metadata = {
     "contact:phone_number": "+91 8428343404",
     "geo.region": "IN",
   },
+  icons: {
+    icon: "/yatindia_logo.jpeg",
+    shortcut: "/yatindia_logo.jpeg",
+    apple: "/yatindia_logo.jpeg",
+  },
 };
 
 export default function RootLayout({
