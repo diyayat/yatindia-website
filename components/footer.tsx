@@ -9,9 +9,18 @@ export function Footer() {
       <div className="container px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              YAT India
-            </h3>
+            <div className="flex items-center gap-2">
+              <img 
+                src="/yatindia_logo.jpeg" 
+                alt="YAT India Logo" 
+                className="h-10 w-auto"
+                width={120}
+                height={40}
+              />
+              <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                YAT India
+              </h3>
+            </div>
             <p className="text-sm text-muted-foreground">
               Transforming ideas into reality through exceptional software solutions and design.
             </p>

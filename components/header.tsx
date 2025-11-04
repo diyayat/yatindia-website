@@ -72,6 +72,13 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
+          <img 
+            src="/yatindia_logo.jpeg" 
+            alt="YAT India Logo" 
+            className="h-10 w-auto"
+            width={120}
+            height={40}
+          />
           <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             YAT India
           </span>

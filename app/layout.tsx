@@ -110,7 +110,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "YAT India",
     url: "https://yatindia.com",
-    logo: "https://yatindia.com/logo.png",
+    logo: "https://yatindia.com/yatindia_logo.jpeg",
     description: "YAT India crafts cutting-edge software solutions that scale. From innovative web applications to robust mobile platforms, we turn your vision into exceptional digital experiences.",
     contactPoint: {
       "@type": "ContactPoint",
