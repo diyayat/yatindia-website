@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { ContactPopup } from "@/components/contact-popup"
 
 const services = [
   "Website - Static & Dynamic",
@@ -52,6 +53,7 @@ export function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false)
   const [isTechnologiesOpen, setIsTechnologiesOpen] = useState(false)
+  const [showContactPopup, setShowContactPopup] = useState(false)
   const pathname = usePathname()
 
   const scrollToSection = (sectionId: string) => {
@@ -70,10 +72,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
+      <div className="container flex h-14 md:h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <img 
-            src="/yatindia_logo.jpeg" 
+            src="/YAT INDIA LOGO UPDATED.png" 
             alt="YAT India Logo" 
             className="h-10 w-auto"
             width={120}
@@ -217,7 +219,7 @@ export function Header() {
           </button>
 
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => setShowContactPopup(true)}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Contact
@@ -226,12 +228,11 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <Button 
-            className="hidden md:flex"
-            onClick={() => scrollToSection('contact')}
-          >
-            Get Started
-          </Button>
+          <Link href="/get-started">
+            <Button className="hidden md:flex">
+              Get Started
+            </Button>
+          </Link>
           <Button
             variant="ghost"
             size="icon"
@@ -381,22 +382,24 @@ export function Header() {
             </button>
 
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => {
+                setShowContactPopup(true)
+                setIsMenuOpen(false)
+              }}
               className="text-left text-sm font-medium transition-colors hover:text-primary"
             >
               Contact
             </button>
-            <Button 
-              className="w-full mt-2"
-              onClick={() => {
-                scrollToSection('contact')
-              }}
-            >
-              Get Started
-            </Button>
+            <Link href="/get-started" onClick={() => setIsMenuOpen(false)}>
+              <Button className="w-full mt-2">
+                Get Started
+              </Button>
+            </Link>
           </nav>
         </div>
       )}
+
+      <ContactPopup isOpen={showContactPopup} onClose={() => setShowContactPopup(false)} />
     </header>
   )
 }

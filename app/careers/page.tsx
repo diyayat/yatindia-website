@@ -77,8 +77,8 @@ export default function CareersPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <a href="mailto:hosting.yatindia@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        hosting.yatindia@gmail.com
+                      <a href="mailto:info@yatindia.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      info@yatindia.com
                       </a>
                     </div>
                   </div>

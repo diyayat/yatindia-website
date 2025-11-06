@@ -14,14 +14,14 @@ const testimonials = [
     youtubeUrl: "https://www.youtube.com/shorts/08ZVX29aD3c",
   },
   {
-    name: "Sreedevi",
+    name: "Ms. Sreedevi",
     company: "Corporate Events, BNI",
     location: "Chennai",
     videoId: "e8uvAmOwQ_A",
     youtubeUrl: "https://www.youtube.com/shorts/e8uvAmOwQ_A",
   },
   {
-    name: "Jeyaramachandran",
+    name: "Mr. Jeyaramachandran",
     company: "IT PROZ Technologies",
     location: "USA",
     videoId: "D1twaUBt3jg",

@@ -1,48 +1,13 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ArrowRight, Globe, ShoppingCart, Smartphone, Code2, Boxes, TrendingUp, Video, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import type { Metadata } from "next"
+import { ContactPopup } from "@/components/contact-popup"
 import { StructuredData } from "@/components/structured-data"
-
-export const metadata: Metadata = {
-  title: "Our Services - Web Development, Mobile Apps, AI & Digital Marketing",
-  description: "Comprehensive software solutions tailored to your business needs. Website development, ecommerce apps, mobile applications, custom software, AR/VR, digital marketing, animation videos, and AI applications. Expert services in India.",
-  keywords: [
-    "web development services",
-    "mobile app development",
-    "ecommerce development",
-    "custom software development",
-    "AR VR development",
-    "digital marketing services",
-    "AI application development",
-    "2D 3D animation",
-    "software development services India",
-  ],
-  openGraph: {
-    title: "Our Services - Web Development, Mobile Apps, AI & Digital Marketing | YAT India",
-    description: "Comprehensive software solutions: Website development, ecommerce apps, mobile applications, custom software, AR/VR, digital marketing, and AI applications.",
-    url: "https://yatindia.com/services",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "YAT India Services",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Our Services - YAT India",
-    description: "Comprehensive software solutions: Web development, mobile apps, ecommerce, custom software, AR/VR, digital marketing, and AI applications.",
-  },
-  alternates: {
-    canonical: "https://yatindia.com/services",
-  },
-}
+import { useState } from "react"
 
 const services = [
   {
@@ -88,6 +53,8 @@ const services = [
 ]
 
 export default function ServicesPage() {
+  const [showContactPopup, setShowContactPopup] = useState(false)
+  
   const servicesJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -228,17 +195,20 @@ export default function ServicesPage() {
             <p className="text-xl text-muted-foreground mb-8">
               Let's discuss how we can help transform your business with our services.
             </p>
-            <Link href="/careers">
-              <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow ">
-                Contact Us
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              onClick={() => setShowContactPopup(true)}
+              className="bg-gradient-primary text-primary-foreground hover:shadow-glow"
+            >
+              Contact Us
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </div>
         </div>
       </section>
 
       <Footer />
+      <ContactPopup isOpen={showContactPopup} onClose={() => setShowContactPopup(false)} />
     </main>
   )
 }

@@ -510,7 +510,7 @@ export default function WorkPage() {
               Let's discuss how we can help transform your ideas into reality using our expertise and cutting-edge technologies.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/#contact">
+              <Link href="/get-started">
                 <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow text-lg px-8">
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />

@@ -2,8 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone } from "lucide-react"
+import Link from "next/link"
+import { ContactPopup } from "@/components/contact-popup"
+import { useState } from "react"
 
 export function CTA() {
+  const [showContactPopup, setShowContactPopup] = useState(false)
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background */}
@@ -24,16 +29,19 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button 
-              size="lg" 
-              className="group bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300 text-lg px-8"
-            >
-              Start Your Project
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href="/get-started">
+              <Button 
+                size="lg" 
+                className="group bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300 text-lg px-8"
+              >
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             <Button 
               size="lg" 
               variant="outline" 
+              onClick={() => setShowContactPopup(true)}
               className="text-lg px-8 border-2 hover:bg-muted hover:text-primary"
             >
               <Mail className="mr-2 w-5 h-5 hover:text-primary" />
@@ -44,7 +52,7 @@ export function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground">
             <div className="flex items-center gap-2">
               <Mail className="w-5 h-5" />
-              <span>hosting.yatindia@gmail.com</span>
+              <span>info@yatindia.com</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5" />
@@ -52,6 +60,8 @@ export function CTA() {
             </div>
           </div>
         </div>
+
+        <ContactPopup isOpen={showContactPopup} onClose={() => setShowContactPopup(false)} />
       </div>
     </section>
   )

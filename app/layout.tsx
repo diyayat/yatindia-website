@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     // bing: "your-bing-verification-code",
   },
   other: {
-    "contact:email": "hosting.yatindia@gmail.com",
+    "contact:email": "info@yatindia.com",
     "contact:phone_number": "+91 8428343404",
     "geo.region": "IN",
   },
@@ -121,7 +121,7 @@ export default function RootLayout({
       "@type": "ContactPoint",
       telephone: "+91-8428343404",
       contactType: "Customer Service",
-      email: "hosting.yatindia@gmail.com",
+      email: "info@yatindia.com",
       areaServed: "IN",
       availableLanguage: "English",
     },
