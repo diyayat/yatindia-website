@@ -6,7 +6,6 @@ import { Menu, X, ChevronDown } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ContactPopup } from "@/components/contact-popup"
 
 const services = [
   "Website - Static & Dynamic",
@@ -53,7 +52,6 @@ export function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false)
   const [isTechnologiesOpen, setIsTechnologiesOpen] = useState(false)
-  const [showContactPopup, setShowContactPopup] = useState(false)
   const pathname = usePathname()
 
   const scrollToSection = (sectionId: string) => {
@@ -218,12 +216,12 @@ export function Header() {
             Testimonials
           </button>
 
-          <button
-            onClick={() => setShowContactPopup(true)}
+          <Link
+            href="/contact"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Contact
-          </button>
+          </Link>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -381,15 +379,13 @@ export function Header() {
               Testimonials
             </button>
 
-            <button
-              onClick={() => {
-                setShowContactPopup(true)
-                setIsMenuOpen(false)
-              }}
+            <Link
+              href="/contact"
+              onClick={() => setIsMenuOpen(false)}
               className="text-left text-sm font-medium transition-colors hover:text-primary"
             >
               Contact
-            </button>
+            </Link>
             <Link href="/get-started" onClick={() => setIsMenuOpen(false)}>
               <Button className="w-full mt-2">
                 Get Started
@@ -399,7 +395,6 @@ export function Header() {
         </div>
       )}
 
-      <ContactPopup isOpen={showContactPopup} onClose={() => setShowContactPopup(false)} />
     </header>
   )
 }

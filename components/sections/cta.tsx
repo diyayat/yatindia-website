@@ -3,11 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone } from "lucide-react"
 import Link from "next/link"
-import { ContactPopup } from "@/components/contact-popup"
-import { useState } from "react"
 
 export function CTA() {
-  const [showContactPopup, setShowContactPopup] = useState(false)
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
@@ -38,15 +35,16 @@ export function CTA() {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={() => setShowContactPopup(true)}
-              className="text-lg px-8 border-2 hover:bg-muted hover:text-primary"
-            >
-              <Mail className="mr-2 w-5 h-5 hover:text-primary" />
-              Contact Us
-            </Button>
+            <Link href="/contact">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 border-2 hover:bg-muted hover:text-primary"
+              >
+                <Mail className="mr-2 w-5 h-5 hover:text-primary" />
+                Contact Us
+              </Button>
+            </Link>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground">
@@ -60,8 +58,6 @@ export function CTA() {
             </div>
           </div>
         </div>
-
-        <ContactPopup isOpen={showContactPopup} onClose={() => setShowContactPopup(false)} />
       </div>
     </section>
   )

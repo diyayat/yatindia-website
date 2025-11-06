@@ -5,9 +5,7 @@ import { Footer } from "@/components/footer"
 import { ArrowRight, Globe, ShoppingCart, Smartphone, Code2, Boxes, TrendingUp, Video, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ContactPopup } from "@/components/contact-popup"
 import { StructuredData } from "@/components/structured-data"
-import { useState } from "react"
 
 const services = [
   {
@@ -53,8 +51,6 @@ const services = [
 ]
 
 export default function ServicesPage() {
-  const [showContactPopup, setShowContactPopup] = useState(false)
-  
   const servicesJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -195,20 +191,20 @@ export default function ServicesPage() {
             <p className="text-xl text-muted-foreground mb-8">
               Let's discuss how we can help transform your business with our services.
             </p>
-            <Button 
-              size="lg" 
-              onClick={() => setShowContactPopup(true)}
-              className="bg-gradient-primary text-primary-foreground hover:shadow-glow"
-            >
-              Contact Us
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link href="/contact">
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary text-primary-foreground hover:shadow-glow"
+              >
+                Contact Us
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
       <Footer />
-      <ContactPopup isOpen={showContactPopup} onClose={() => setShowContactPopup(false)} />
     </main>
   )
 }
