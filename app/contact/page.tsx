@@ -6,10 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Mail, Phone, Youtube, Linkedin, Instagram, ArrowRight, Briefcase, User } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 
 export default function ContactPage() {
-  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
