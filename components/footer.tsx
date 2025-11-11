@@ -17,9 +17,6 @@ export function Footer() {
                 width={120}
                 height={40}
               />
-              <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                YAT India
-              </h3>
             </div>
             <p className="text-sm text-muted-foreground">
               Transforming ideas into reality through exceptional software solutions and design.
@@ -153,10 +150,13 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>info@yatindia.com</li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>YAT INDIA, 5/2B, Reddy Street, Tambaram West, Chennai-600045.</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span>info@yatindia.com</span>
               </li>
             </ul>
           </div>

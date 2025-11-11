@@ -26,6 +26,13 @@ const testimonials = [
     videoId: "D1twaUBt3jg",
     youtubeUrl: "https://www.youtube.com/shorts/D1twaUBt3jg",
   },
+  {
+    name: "Client Testimonial",
+    company: "YAT India Client",
+    location: "",
+    videoId: "OrAScELhNh8",
+    youtubeUrl: "https://youtube.com/shorts/OrAScELhNh8?si=avcr_O56g-e5vuFD",
+  },
 ]
 
 export function Testimonials() {

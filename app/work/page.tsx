@@ -53,7 +53,7 @@ const servicesWithTech = [
     title: "Website Development - Static & Dynamic",
     description: "Professional websites from simple static pages to complex dynamic web applications with content management systems.",
     detailedDescription: "We create websites that combine stunning design with powerful functionality. Whether you need a simple brochure site or a complex web application, we build solutions that scale with your business.",
-    technologies: ["React", "Next.js", "Vue.js", "Angular", "TypeScript", "Node.js", "Django", "Express.js", "PostgreSQL", "MongoDB", "Tailwind CSS"],
+    technologies: ["React", "Next.js", "Vue.js", "Angular", "TypeScript", "Node.js", "Django", "Express.js", "PostgreSQL", "MongoDB", "Tailwind CSS", "WordPress"],
     benefits: [
       "Fast loading times and optimal performance",
       "SEO-friendly structure for better search rankings",
@@ -392,16 +392,6 @@ export default function WorkPage() {
                       ))}
                     </ul>
                   </div>
-
-                  {/* Start Your Project Button */}
-                  <div className="mt-6">
-                    <Link href="/get-started">
-                      <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
-                        Start Your Project
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                      </Button>
-                    </Link>
-                  </div>
                 </div>
 
                 {/* Right Side - Technologies */}
@@ -411,7 +401,7 @@ export default function WorkPage() {
                       <Zap className="w-5 h-5 text-primary" />
                       Technologies We Use
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {service.technologies.map((tech, i) => (
                         <span
                           key={i}
@@ -420,6 +410,15 @@ export default function WorkPage() {
                           {tech}
                         </span>
                       ))}
+                    </div>
+                    {/* Start Your Project Button */}
+                    <div className="mt-6">
+                      <Link href="/get-started">
+                        <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow w-full">
+                          Start Your Project
+                          <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>

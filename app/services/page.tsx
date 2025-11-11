@@ -180,7 +180,7 @@ export default function ServicesPage() {
                 <h3 className="text-2xl font-semibold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground mb-6">{service.description}</p>
                 <Link href={`/work#${service.linkId}`}>
-                  <Button variant="ghost" className="group/btn p-0 h-auto">
+                  <Button variant="ghost" className="group/btn p-0 h-auto hover:bg-muted hover:px-3 hover:py-1.5 rounded-md transition-all">
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
@@ -201,12 +201,12 @@ export default function ServicesPage() {
             <p className="text-xl text-muted-foreground mb-8">
               Let's discuss how we can help transform your business with our services.
             </p>
-            <Link href="/contact">
+            <Link href="/get-started">
               <Button 
                 size="lg" 
                 className="bg-gradient-primary text-primary-foreground hover:shadow-glow"
               >
-                Contact Us
+                Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>

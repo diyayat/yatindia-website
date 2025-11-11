@@ -2,22 +2,15 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { 
   Heart, 
-  Wallet, 
-  Truck, 
   Briefcase, 
-  CreditCard, 
-  Building2, 
   Package, 
-  Calculator, 
   ShoppingCart, 
   GraduationCap, 
   Smartphone, 
-  Fuel, 
   Hammer, 
-  Plane, 
-  Sprout, 
-  Home, 
-  Newspaper 
+  Home,
+  Calendar,
+  Scale
 } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -68,28 +61,10 @@ const industries = [
     link: "/industries/healthcare",
   },
   {
-    title: "Fintech",
-    description: "We cover sectors ranging from healthcare to fintech, and education to construction. Our expertise ensures that every client receives a solution suited to their industry's demands.",
-    icon: Wallet,
-    link: "/industries/fintech",
-  },
-  {
-    title: "Transportation and Logistics",
-    description: "Maximizes supply chain efficiency and boosts production. Our solutions cater to real-time data processing, fleet management, and efficient route planning.",
-    icon: Truck,
-    link: "/industries/logistics",
-  },
-  {
     title: "Business Software Development",
     description: "We cover sectors ranging from healthcare to fintech, and education to construction. Our expertise ensures that every client receives a solution suited to their industry's demands.",
     icon: Briefcase,
     link: "/industries/business-software-development",
-  },
-  {
-    title: "Financial Services",
-    description: "We offer full financial services software. It covers risk management, managing compliance, and financial planning. Our software solutions provide businesses and consumers with a secure, fast, and easy experience.",
-    icon: CreditCard,
-    link: "/industries/finance",
   },
   {
     title: "Retail",
@@ -98,21 +73,9 @@ const industries = [
     link: "#",
   },
   {
-    title: "Banking",
-    description: "Enhance customer service and online banking with secure transactions. We implement omnichannel banking strategies and integrate innovative fintech solutions. This helps us meet the changing needs of the banking sector.",
-    icon: Building2,
-    link: "#",
-  },
-  {
     title: "Supply Chain Development",
     description: "Boost supply chain efficiency. Our software services target inventory management, demand forecasting, and logistics. We utilize advanced technology and best practices to help businesses reduce costs and work better.",
     icon: Package,
-    link: "#",
-  },
-  {
-    title: "Accounting",
-    description: "Provide financial reporting tools, including budgeting and tax planning. We design software solutions for accuracy and efficiency. It simplifies financial oversight for businesses.",
-    icon: Calculator,
     link: "#",
   },
   {
@@ -134,27 +97,9 @@ const industries = [
     link: "#",
   },
   {
-    title: "Oil & Gas",
-    description: "Help oil and gas companies with exploration, production, and distribution. We understand their unique challenges. Our solutions improve operations and inform decisions. This helps companies increase their productivity and reduce costs.",
-    icon: Fuel,
-    link: "#",
-  },
-  {
     title: "Construction",
     description: "Focuses on project management, structural design, and resource allocation. Our solutions aim to enhance production and streamline the construction process.",
     icon: Hammer,
-    link: "#",
-  },
-  {
-    title: "Travel",
-    description: "We understand that the travel industry is dynamic. We create efficient booking systems and manage customer relationships and itineraries. Companies use our software solutions to simplify operations and boost customer satisfaction.",
-    icon: Plane,
-    link: "#",
-  },
-  {
-    title: "Agriculture",
-    description: "Helps farmers and agribusinesses boost their productivity and efficiency. We develop solutions for agriculture businesses in crop management and supply chain optimization.",
-    icon: Sprout,
     link: "#",
   },
   {
@@ -164,9 +109,15 @@ const industries = [
     link: "#",
   },
   {
-    title: "News",
-    description: "Empower agencies to dominate their content strategy and connect with a massive audience. Our solutions focus on management, engagement, and distribution. We provide agencies with the tools to compete in the digital world.",
-    icon: Newspaper,
+    title: "Event Management",
+    description: "Streamline event planning and management with comprehensive software solutions. Our platforms help event management companies handle registrations, ticketing, scheduling, vendor coordination, and attendee engagement efficiently.",
+    icon: Calendar,
+    link: "#",
+  },
+  {
+    title: "Law Firm",
+    description: "Empower law firms with specialized software solutions for case management, document handling, client communication, billing, and legal research. Our solutions help law firms improve efficiency and deliver better client services.",
+    icon: Scale,
     link: "#",
   },
 ]
@@ -231,4 +182,5 @@ export default function IndustriesPage() {
     </main>
   )
 }
+
 

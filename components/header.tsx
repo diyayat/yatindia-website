@@ -20,22 +20,18 @@ const services = [
 
 const industries = [
   "Healthcare",
-  "Fintech",
-  "Transportation and Logistics",
   "Business Software Development",
-  "Financial Services",
   "Retail",
-  "Banking",
   "Supply Chain Development",
-  "Accounting",
   "Education",
   "Telecommunications",
   "Energy",
   "Construction",
   "Aviation",
-  "Agriculture",
   "Real Estate",
   "Media and Entertainment",
+  "Event Management",
+  "Law Firm",
 ]
 
 const techCategories = [
@@ -79,9 +75,6 @@ export function Header() {
             width={240}
             height={80}
           />
-          <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            
-          </span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">

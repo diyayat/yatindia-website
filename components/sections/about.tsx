@@ -45,7 +45,7 @@ export function About() {
             <div>
               <h3 className="text-2xl font-semibold mb-4">Our Story</h3>
               <p className="text-muted-foreground mb-4">
-                Founded with a vision to bridge the gap between innovative ideas and exceptional execution, YAT India has been at the forefront of software development and design for over 5 years.
+                Founded with a vision to bridge the gap between innovative ideas and exceptional execution, YAT India has been at the forefront of software development and design Since 2019.
               </p>
               <p className="text-muted-foreground">
                 We've helped startups and enterprises alike transform their digital presence, delivering over 100 successful projects that have impacted millions of users worldwide.

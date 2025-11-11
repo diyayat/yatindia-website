@@ -23,7 +23,7 @@ const Hero = () => {
         </video>
         
         {/* Gradient Overlays - Light Mode */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/85 dark:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95 dark:hidden" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent dark:hidden" />
         
         {/* Gradient Overlays - Dark Mode */}
@@ -101,7 +101,7 @@ const Hero = () => {
               <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Since 2019
               </div>
-              <div className="text-sm text-muted-foreground">6+ Years Experience</div>
+              <div className="text-sm text-muted-foreground">Innovating Sense</div>
             </div>
           </div>
         </div>
