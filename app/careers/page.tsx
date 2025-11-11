@@ -115,7 +115,8 @@ export default function CareersPage() {
 
             {/* Application Form */}
             <div className="bg-background rounded-lg border border-border shadow-lg p-6 md:p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <h2 className="text-3xl font-display font-bold mb-4 md:mb-6">Career Application Form</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Full Name *

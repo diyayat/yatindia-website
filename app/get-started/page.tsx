@@ -564,6 +564,7 @@ export default function GetStartedPage() {
           {/* Form Content */}
           <div className="max-w-3xl mx-auto relative z-0 mt-4">
             <div className="bg-background rounded-lg border border-border shadow-lg p-4 md:p-6 relative z-0">
+              <h2 className="text-3xl font-display font-bold mb-4 md:mb-6">Project Inquiry Form</h2>
               <form onSubmit={currentStep === steps.length ? handleSubmit : (e) => { e.preventDefault(); nextStep(); }}>
                 {renderStepContent()}
 

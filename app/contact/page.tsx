@@ -77,7 +77,7 @@ export default function ContactPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Contact Form */}
               <div className="bg-background rounded-lg border border-border shadow-lg p-6">
-                <h2 className="text-2xl font-display font-bold mb-2">Request a Callback</h2>
+                <h2 className="text-3xl font-display font-bold mb-2">Contact Form</h2>
                 <p className="text-sm text-muted-foreground mb-6">
                   Leave your details and we'll call you back
                 </p>
