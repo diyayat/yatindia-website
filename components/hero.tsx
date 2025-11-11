@@ -10,13 +10,32 @@ const Hero = () => {
   
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero">
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/80" />
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/yatindiavideo.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Gradient Overlays - Light Mode */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/85 dark:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent dark:hidden" />
+        
+        {/* Gradient Overlays - Dark Mode */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90 hidden dark:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent hidden dark:block" />
+        
+        {/* Additional gradient for better text readability */}
+        <div className="absolute inset-0 bg-gradient-hero opacity-40" />
       </div>
 
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       </div>
@@ -80,9 +99,9 @@ const Hero = () => {
             </div>
             <div className="space-y-1">
               <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-primary bg-clip-text text-transparent">
-                6+
+                Since 2019
               </div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div className="text-sm text-muted-foreground">6+ Years Experience</div>
             </div>
           </div>
         </div>

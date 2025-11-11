@@ -316,10 +316,29 @@ export default function WorkPage() {
           </div>
 
           <div className="space-y-16 md:space-y-24">
-            {servicesWithTech.map((service, index) => (
+            {servicesWithTech.map((service, index) => {
+              // Map service titles to IDs that match the services component
+              const titleToIdMap: Record<string, string> = {
+                "Website Development - Static & Dynamic": "website-development",
+                "Ecommerce Applications": "ecommerce-applications",
+                "Mobile App Development": "mobile-app-development",
+                "Custom Software Development": "custom-software-development",
+                "AR/VR Development": "ar-vr-development",
+                "Digital Marketing": "digital-marketing",
+                "2D & 3D Animation Videos": "animation-videos",
+                "AI Applications": "ai-applications",
+              };
+              
+              const serviceId = titleToIdMap[service.title] || service.title
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+              
+              return (
               <div
                 key={index}
-                className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
+                id={serviceId}
+                className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center scroll-mt-24 ${
                   index % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
@@ -359,7 +378,7 @@ export default function WorkPage() {
                   </div>
 
                   {/* Use Cases */}
-                  <div>
+                  <div className="mb-6">
                     <h4 className="font-semibold mb-3 flex items-center gap-2">
                       <Target className="w-5 h-5 text-primary" />
                       Common Use Cases
@@ -372,6 +391,16 @@ export default function WorkPage() {
                         </li>
                       ))}
                     </ul>
+                  </div>
+
+                  {/* Start Your Project Button */}
+                  <div className="mt-6">
+                    <Link href="/get-started">
+                      <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
+                        Start Your Project
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -395,7 +424,8 @@ export default function WorkPage() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -439,6 +469,16 @@ export default function WorkPage() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Start Your Project Button */}
+          <div className="mt-12 text-center">
+            <Link href="/get-started">
+              <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -495,6 +535,16 @@ export default function WorkPage() {
                 Your success is our priority. We partner with you every step of the way.
               </p>
             </div>
+          </div>
+
+          {/* Start Your Project Button */}
+          <div className="mt-12 text-center">
+            <Link href="/get-started">
+              <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,8 @@
 "use client"
 
-import { Code, Smartphone, Palette, Zap, Shield, Globe } from "lucide-react"
+import { Code, Smartphone, Palette, Zap, Shield, Globe, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 const features = [
   {
@@ -61,6 +63,16 @@ export function Features() {
               <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Start Your Project Button */}
+        <div className="mt-12 text-center">
+          <Link href="/get-started">
+            <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
+              Start Your Project
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

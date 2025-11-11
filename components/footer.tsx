@@ -1,6 +1,6 @@
 "use client"
 
-import { Youtube, Linkedin, Instagram, Mail } from "lucide-react"
+import { Youtube, Linkedin, Instagram, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -154,8 +154,10 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>info@yatindia.com</li>
-              <li>+91 8428343404</li>
-              <li>India</li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>YAT INDIA, 5/2B, Reddy Street, Tambaram West, Chennai-600045.</span>
+              </li>
             </ul>
           </div>
         </div>

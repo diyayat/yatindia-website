@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ArrowLeft, Check, Send } from "lucide-react"
 import { useState } from "react"
+import { api } from "@/lib/api"
+import { Captcha } from "@/components/captcha"
 
 const services = [
   "Website - Static & Dynamic",
@@ -72,6 +74,7 @@ export default function GetStartedPage() {
     howDidYouHear: "",
     previousExperience: "",
   })
+  const [captchaToken, setCaptchaToken] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleServiceToggle = (service: string) => {
@@ -132,16 +135,28 @@ export default function GetStartedPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!captchaToken) {
+      alert("Please complete the CAPTCHA verification")
+      return
+    }
+
     setIsSubmitting(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Form submitted:", formData)
+    try {
+      await api.submitProject({
+        ...formData,
+        captchaToken,
+      })
       alert("Thank you for your submission! We'll get back to you within 24 hours.")
-      setIsSubmitting(false)
       // Reset form or redirect
       window.location.href = "/"
-    }, 1500)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert(error instanceof Error ? error.message : "Failed to submit form. Please try again.")
+      setCaptchaToken("")
+      setIsSubmitting(false)
+    }
   }
 
   const renderStepContent = () => {
@@ -552,6 +567,23 @@ export default function GetStartedPage() {
               <form onSubmit={currentStep === steps.length ? handleSubmit : (e) => { e.preventDefault(); nextStep(); }}>
                 {renderStepContent()}
 
+                {/* CAPTCHA - Only show on last step */}
+                {currentStep === steps.length && (
+                  <div className="mt-6">
+                    <label className="block text-sm font-medium mb-2">
+                      Verification *
+                    </label>
+                    <Captcha
+                      onVerify={(token) => setCaptchaToken(token)}
+                      onError={() => {
+                        setCaptchaToken("")
+                        alert("CAPTCHA verification failed. Please try again.")
+                      }}
+                      onExpire={() => setCaptchaToken("")}
+                    />
+                  </div>
+                )}
+
                 {/* Navigation Buttons */}
                 <div className="flex flex-col sm:flex-row justify-between gap-4 mt-6 md:mt-8 pt-4 border-t">
                   <Button
@@ -577,7 +609,7 @@ export default function GetStartedPage() {
                   ) : (
                     <Button
                       type="submit"
-                      disabled={!canProceed() || isSubmitting}
+                      disabled={!canProceed() || isSubmitting || !captchaToken}
                       className="flex items-center justify-center gap-2 bg-gradient-primary text-primary-foreground hover:shadow-glow w-full sm:w-auto"
                     >
                       {isSubmitting ? "Submitting..." : (

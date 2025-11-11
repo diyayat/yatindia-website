@@ -3,9 +3,11 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, Youtube, Linkedin, Instagram, ArrowRight, Briefcase, User } from "lucide-react"
+import { Mail, Phone, Youtube, Linkedin, Instagram, ArrowRight, Briefcase, User, MapPin } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
+import { api } from "@/lib/api"
+import { Captcha } from "@/components/captcha"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,6 +15,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
   })
+  const [captchaToken, setCaptchaToken] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,19 +27,33 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!captchaToken) {
+      alert("Please complete the CAPTCHA verification")
+      return
+    }
+
     setIsSubmitting(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Callback request submitted:", formData)
+    try {
+      await api.submitContact({
+        ...formData,
+        captchaToken,
+      })
       alert("Thank you! We'll call you back soon.")
       setFormData({
         name: "",
         email: "",
         phone: "",
       })
+      setCaptchaToken("")
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert(error instanceof Error ? error.message : "Failed to submit form. Please try again.")
+      setCaptchaToken("")
+    } finally {
       setIsSubmitting(false)
-    }, 1000)
+    }
   }
 
   return (
@@ -114,9 +131,23 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Verification *
+                    </label>
+                    <Captcha
+                      onVerify={(token) => setCaptchaToken(token)}
+                      onError={() => {
+                        setCaptchaToken("")
+                        alert("CAPTCHA verification failed. Please try again.")
+                      }}
+                      onExpire={() => setCaptchaToken("")}
+                    />
+                  </div>
+
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !captchaToken}
                     className="w-full bg-gradient-primary text-primary-foreground hover:shadow-glow"
                   >
                     {isSubmitting ? "Submitting..." : "Request Callback"}
@@ -172,19 +203,16 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Phone */}
+                    {/* Address */}
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-6 h-6 text-primary" />
+                        <MapPin className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1">Phone</h3>
-                        <a 
-                          href="tel:+918428343404" 
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          +91 8428343404
-                        </a>
+                        <h3 className="font-semibold mb-1">Address</h3>
+                        <p className="text-sm text-muted-foreground">
+                          YAT INDIA, 5/2B, Reddy Street, Tambaram West, Chennai-600045.
+                        </p>
                       </div>
                     </div>
 

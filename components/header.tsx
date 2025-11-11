@@ -70,17 +70,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 md:h-16 items-center justify-between px-4">
+      <div className="container flex h-16 md:h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <img 
             src="/YAT INDIA LOGO UPDATED.png" 
             alt="YAT India Logo" 
-            className="h-10 w-auto"
-            width={120}
-            height={40}
+            className="h-16 md:h-20 w-auto"
+            width={240}
+            height={80}
           />
           <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            YAT India
+            
           </span>
         </Link>
         

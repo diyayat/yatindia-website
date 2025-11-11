@@ -2,6 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const getLogoUrl = (name: string): string => {
   // Direct URLs for technologies that need special handling
@@ -127,7 +129,7 @@ export function Technologies() {
           })}
         </div>
 
-        <div className="text-center">
+        <div className="text-center space-y-6">
           <Link 
             href="/technologies"
             className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all font-medium"
@@ -137,6 +139,16 @@ export function Technologies() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
+
+          {/* Start Your Project Button */}
+          <div className="pt-4">
+            <Link href="/get-started">
+              <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -76,7 +76,7 @@ export default function AboutPage() {
               About <span className="bg-gradient-primary bg-clip-text text-transparent">YAT India</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              We're a team of passionate developers and designers dedicated to creating exceptional digital experiences.
+               We serve clients in India, US and Singapore.
             </p>
           </div>
         </div>
@@ -127,9 +127,9 @@ export default function AboutPage() {
               </div>
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-display font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
-                  5+
+                  Since 2019
                 </div>
-                <div className="text-muted-foreground">Years Experience</div>
+                <div className="text-muted-foreground">6+ Years Experience</div>
               </div>
             </div>
 

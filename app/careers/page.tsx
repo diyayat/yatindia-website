@@ -3,8 +3,10 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Send, Upload, FileText } from "lucide-react"
 import { useState } from "react"
+import { api } from "@/lib/api"
+import { Captcha } from "@/components/captcha"
 
 export default function CareersPage() {
   const [formData, setFormData] = useState({
@@ -15,20 +17,62 @@ export default function CareersPage() {
     experience: "",
     message: "",
   })
+  const [resume, setResume] = useState<File | null>(null)
+  const [captchaToken, setCaptchaToken] = useState<string>("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    alert("Thank you for your interest! We'll get back to you soon.")
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      position: "",
-      experience: "",
-      message: "",
-    })
+    
+    if (!captchaToken) {
+      alert("Please complete the CAPTCHA verification")
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      await api.submitCareer({
+        ...formData,
+        resume: resume || undefined,
+        captchaToken,
+      })
+      alert("Thank you for your interest! We'll get back to you soon.")
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        position: "",
+        experience: "",
+        message: "",
+      })
+      setResume(null)
+      setCaptchaToken("")
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert(error instanceof Error ? error.message : "Failed to submit form. Please try again.")
+      setCaptchaToken("")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0]
+      // Validate file type
+      const allowedTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png', 'image/gif']
+      if (!allowedTypes.includes(file.type)) {
+        alert('Please upload a PDF or image file (JPEG, PNG, GIF)')
+        return
+      }
+      // Validate file size (10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        alert('File size must be less than 10MB')
+        return
+      }
+      setResume(file)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -58,57 +102,19 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Application Form Section */}
       <section className="py-24">
         <div className="container px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div>
-                <h2 className="text-3xl font-display font-bold mb-6">Get In Touch</h2>
-                <p className="text-muted-foreground mb-8">
-                  Fill out the form or reach out to us directly. We're here to help!
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Email</h3>
-                      <a href="mailto:info@yatindia.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      info@yatindia.com
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Phone</h3>
-                      <a href="tel:+918428343404" className="text-muted-foreground hover:text-primary transition-colors">
-                        +91 8428343404
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Location</h3>
-                      <p className="text-muted-foreground">India</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-display font-bold mb-4">Application Form</h2>
+              <p className="text-muted-foreground">
+                Fill out the form below to apply for a position. We'll review your application and get back to you soon.
+              </p>
+            </div>
 
-              {/* Contact Form */}
-              <div>
+            {/* Application Form */}
+            <div className="bg-background rounded-lg border border-border shadow-lg p-6 md:p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -208,16 +214,65 @@ export default function CareersPage() {
                     />
                   </div>
 
+                  <div>
+                    <label htmlFor="resume" className="block text-sm font-medium mb-2">
+                      Resume (PDF or Image) <span className="text-muted-foreground text-xs">(Optional, Max 10MB)</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        accept=".pdf,.jpg,.jpeg,.png,.gif"
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                      <label
+                        htmlFor="resume"
+                        className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-md border border-input bg-background hover:bg-muted/50 cursor-pointer transition-colors"
+                      >
+                        <Upload className="w-5 h-5" />
+                        <span className="text-sm">
+                          {resume ? resume.name : "Choose file or drag and drop"}
+                        </span>
+                      </label>
+                    </div>
+                    {resume && (
+                      <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+                        <FileText className="w-4 h-4" />
+                        <span>{resume.name} ({(resume.size / 1024 / 1024).toFixed(2)} MB)</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Verification *
+                    </label>
+                    <Captcha
+                      onVerify={(token) => setCaptchaToken(token)}
+                      onError={() => {
+                        setCaptchaToken("")
+                        alert("CAPTCHA verification failed. Please try again.")
+                      }}
+                      onExpire={() => setCaptchaToken("")}
+                    />
+                  </div>
+
                   <Button 
                     type="submit" 
                     size="lg" 
+                    disabled={isSubmitting || !captchaToken}
                     className="w-full bg-gradient-primary text-primary-foreground hover:shadow-glow"
                   >
-                    Send Message
-                    <Send className="ml-2 w-5 h-5" />
+                    {isSubmitting ? "Submitting..." : (
+                      <>
+                        Submit Application
+                        <Send className="ml-2 w-5 h-5" />
+                      </>
+                    )}
                   </Button>
                 </form>
-              </div>
             </div>
           </div>
         </div>

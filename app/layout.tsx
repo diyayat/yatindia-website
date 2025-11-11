@@ -3,6 +3,9 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { StructuredData } from "@/components/structured-data";
+import { GetStartedProvider } from "@/components/get-started-context";
+import { FloatingGetStartedButton } from "@/components/floating-get-started-button";
+import { GetStartedModal } from "@/components/get-started-modal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -95,7 +98,6 @@ export const metadata: Metadata = {
   },
   other: {
     "contact:email": "info@yatindia.com",
-    "contact:phone_number": "+91 8428343404",
     "geo.region": "IN",
   },
   icons: {
@@ -119,7 +121,6 @@ export default function RootLayout({
     description: "YAT India crafts cutting-edge software solutions that scale. From innovative web applications to robust mobile platforms, we turn your vision into exceptional digital experiences.",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-8428343404",
       contactType: "Customer Service",
       email: "info@yatindia.com",
       areaServed: "IN",
@@ -132,8 +133,11 @@ export default function RootLayout({
     ],
     address: {
       "@type": "PostalAddress",
+      streetAddress: "5/2B, Reddy Street, Tambaram West",
+      addressLocality: "Chennai",
+      postalCode: "600045",
+      addressRegion: "Tamil Nadu",
       addressCountry: "IN",
-      addressLocality: "India",
     },
     aggregateRating: {
       "@type": "AggregateRating",
@@ -154,7 +158,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <GetStartedProvider>
+            {children}
+            <FloatingGetStartedButton />
+            <GetStartedModal />
+          </GetStartedProvider>
         </ThemeProvider>
       </body>
     </html>

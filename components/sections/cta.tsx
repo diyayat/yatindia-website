@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail, Phone } from "lucide-react"
+import { ArrowRight, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export function CTA() {
@@ -53,8 +53,8 @@ export function CTA() {
               <span>info@yatindia.com</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-5 h-5" />
-              <span>+91 8428343404</span>
+              <MapPin className="w-5 h-5" />
+              <span>YAT INDIA, 5/2B, Reddy Street, Tambaram West, Chennai-600045.</span>
             </div>
           </div>
         </div>

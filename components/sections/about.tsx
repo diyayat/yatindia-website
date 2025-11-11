@@ -1,6 +1,8 @@
 "use client"
 
-import { Target, Users, Award, Heart } from "lucide-react"
+import { Target, Users, Award, Heart, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 const values = [
   {
@@ -35,7 +37,7 @@ export function About() {
               About <span className="bg-gradient-primary bg-clip-text text-transparent">YAT India</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're a team of passionate developers and designers dedicated to creating exceptional digital experiences.
+              We're a team of passionate developers and designers dedicated to creating exceptional digital experiences. We serve clients in India, US and Singapore.
             </p>
           </div>
 
@@ -70,6 +72,16 @@ export function About() {
                 <p className="text-sm text-muted-foreground">{value.description}</p>
               </div>
             ))}
+          </div>
+
+          {/* Start Your Project Button */}
+          <div className="mt-12 text-center">
+            <Link href="/get-started">
+              <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
