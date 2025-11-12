@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
@@ -25,7 +24,5 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  reactStrictMode: true,
-};
-
+  reactStrictMode: true,};
 export default nextConfig;

@@ -37,11 +37,11 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-12 sm:py-16 md:py-24 bg-muted/30">
+    <section id="testimonials" className="py-12 sm:py-14 md:py-16 bg-muted/30">
       <div className="container px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3">
               What Our <span className="bg-gradient-primary bg-clip-text text-transparent">Clients Say</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
@@ -109,7 +109,7 @@ export function Testimonials() {
           </div>
 
           {/* Start Your Project Button */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Link href="/get-started">
               <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
                 Start Your Project

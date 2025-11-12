@@ -219,11 +219,11 @@ export default function TechnologiesPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-hero overflow-hidden">
+      <section className="relative py-16 bg-gradient-hero overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/80" />
         <div className="container relative z-10 px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
               Our <span className="bg-gradient-primary bg-clip-text text-transparent">Technologies</span>
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -235,10 +235,10 @@ export default function TechnologiesPage() {
       </section>
 
       {/* Technologies Tabs Section */}
-      <section id="technologies-tabs" className="py-24">
+      <section id="technologies-tabs" className="py-16">
         <div className="container px-4">
           {/* Tabs */}
-          <div className="flex flex-wrap gap-2 justify-center mb-12 border-b border-border">
+          <div className="flex flex-wrap gap-2 justify-center mb-8 border-b border-border">
             {tabs.map((tab) => (
               <button
                 key={tab.id}

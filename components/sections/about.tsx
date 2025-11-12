@@ -29,11 +29,11 @@ const values = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-muted/50">
+    <section id="about" className="py-16 bg-muted/50">
       <div className="container px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-3">
               About <span className="bg-gradient-primary bg-clip-text text-transparent">YAT India</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -41,10 +41,10 @@ export function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
             <div>
-              <h3 className="text-2xl font-semibold mb-4">Our Story</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">Our Story</h3>
+              <p className="text-muted-foreground mb-3">
                 Founded with a vision to bridge the gap between innovative ideas and exceptional execution, YAT India has been at the forefront of software development and design Since 2019.
               </p>
               <p className="text-muted-foreground">
@@ -52,8 +52,8 @@ export function About() {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold mb-4">What We Do</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">What We Do</h3>
+              <p className="text-muted-foreground mb-3">
                 We specialize in custom software development, mobile applications, web platforms, and UI/UX design. Our full-stack expertise allows us to take projects from concept to deployment.
               </p>
               <p className="text-muted-foreground">
@@ -75,7 +75,7 @@ export function About() {
           </div>
 
           {/* Start Your Project Button */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Link href="/get-started">
               <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
                 Start Your Project

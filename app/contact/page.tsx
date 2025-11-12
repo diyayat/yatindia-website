@@ -65,8 +65,8 @@ export default function ContactPage() {
         
         <div className="container relative z-10 px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            <div className="text-center mb-8">
+              <h1 className="text-4xl md:text-5xl font-display font-bold mb-3">
                 Get in <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

@@ -39,10 +39,10 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-muted/50">
+    <section id="features" className="py-16 bg-muted/50">
       <div className="container px-4">
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        <div className="max-w-2xl mx-auto text-center mb-10">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-3">
             Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">YAT India</span>?
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -66,7 +66,7 @@ export function Features() {
         </div>
 
         {/* Start Your Project Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <Link href="/get-started">
             <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
               Start Your Project

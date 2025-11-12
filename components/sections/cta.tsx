@@ -7,7 +7,7 @@ import Link from "next/link"
 export function CTA() {
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/80" />
@@ -18,14 +18,14 @@ export function CTA() {
 
       <div className="container relative z-10 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             Ready to Start Your <span className="bg-gradient-primary bg-clip-text text-transparent">Project</span>?
           </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
             Let's discuss how we can help transform your ideas into reality. Get in touch with us today.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Link href="/get-started">
               <Button 
                 size="lg" 

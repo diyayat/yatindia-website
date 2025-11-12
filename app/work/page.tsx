@@ -284,7 +284,7 @@ export default function WorkPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-hero overflow-hidden">
+      <section className="relative py-16 md:py-20 bg-gradient-hero overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/80" />
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
@@ -292,10 +292,10 @@ export default function WorkPage() {
         </div>
         <div className="container relative z-10 px-6 md:px-8 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4">
               View Our <span className="bg-gradient-primary bg-clip-text text-transparent">Work</span>
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed">
               Explore our comprehensive services and the cutting-edge technologies we use to build exceptional digital solutions. 
               Learn how we transform ideas into reality.
             </p>
@@ -304,10 +304,10 @@ export default function WorkPage() {
       </section>
 
       {/* Services Section with Details */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container px-6 md:px-8 lg:px-12">
-          <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <div className="max-w-2xl mx-auto text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3">
               Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground">
@@ -315,7 +315,7 @@ export default function WorkPage() {
             </p>
           </div>
 
-          <div className="space-y-16 md:space-y-24">
+          <div className="space-y-12 md:space-y-16">
             {servicesWithTech.map((service, index) => {
               // Map service titles to IDs that match the services component
               const titleToIdMap: Record<string, string> = {
@@ -430,10 +430,10 @@ export default function WorkPage() {
       </section>
 
       {/* Technology Categories Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-12 md:py-16 bg-muted/30">
         <div className="container px-6 md:px-8 lg:px-12">
-          <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <div className="max-w-2xl mx-auto text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3">
               Our <span className="bg-gradient-primary bg-clip-text text-transparent">Technology Stack</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground">
@@ -471,7 +471,7 @@ export default function WorkPage() {
           </div>
 
           {/* Start Your Project Button */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Link href="/get-started">
               <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
                 Start Your Project
@@ -483,10 +483,10 @@ export default function WorkPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container px-6 md:px-8 lg:px-12">
-          <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <div className="max-w-2xl mx-auto text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3">
               Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">YAT India</span>?
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground">
@@ -537,7 +537,7 @@ export default function WorkPage() {
           </div>
 
           {/* Start Your Project Button */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Link href="/get-started">
               <Button size="lg" className="bg-gradient-primary text-primary-foreground hover:shadow-glow">
                 Start Your Project
@@ -549,13 +549,13 @@ export default function WorkPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="py-12 md:py-16 bg-muted/30">
         <div className="container px-6 md:px-8 lg:px-12">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
               Ready to Start Your <span className="bg-gradient-primary bg-clip-text text-transparent">Project</span>?
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground mb-6">
               Let's discuss how we can help transform your ideas into reality using our expertise and cutting-edge technologies.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

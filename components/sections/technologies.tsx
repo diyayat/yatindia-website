@@ -80,10 +80,10 @@ const commonTechnologies = [
 
 export function Technologies() {
   return (
-    <section id="technologies" className="py-24 bg-muted/30">
+    <section id="technologies" className="py-16 bg-muted/30">
       <div className="container px-4">
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        <div className="max-w-2xl mx-auto text-center mb-10">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-3">
             Technologies We <span className="bg-gradient-primary bg-clip-text text-transparent">Work With</span>
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -91,7 +91,7 @@ export function Technologies() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 mb-12">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 mb-8">
           {commonTechnologies.map((tech, index) => {
             const logoUrl = getLogoUrl(tech)
             return (

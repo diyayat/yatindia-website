@@ -101,9 +101,9 @@ export const metadata: Metadata = {
     "geo.region": "IN",
   },
   icons: {
-    icon: "/yatindia_logo.jpeg",
-    shortcut: "/yatindia_logo.jpeg",
-    apple: "/yatindia_logo.jpeg",
+    icon: "/YAT INDIA LOGO UPDATED.png",
+    shortcut: "/YAT INDIA LOGO UPDATED.png",
+    apple: "/YAT INDIA LOGO UPDATED.png",
   },
 };
 

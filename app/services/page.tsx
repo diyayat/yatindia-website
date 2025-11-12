@@ -150,11 +150,11 @@ export default function ServicesPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-hero overflow-hidden">
+      <section className="relative py-16 bg-gradient-hero overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/80" />
         <div className="container relative z-10 px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
               Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -166,7 +166,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="container px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
@@ -192,13 +192,13 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-16 bg-muted/30">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground mb-6">
               Let's discuss how we can help transform your business with our services.
             </p>
             <Link href="/get-started">
